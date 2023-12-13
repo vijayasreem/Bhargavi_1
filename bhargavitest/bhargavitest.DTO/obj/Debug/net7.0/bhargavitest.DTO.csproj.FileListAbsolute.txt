@@ -1,0 +1,12 @@
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DTO\bin\Debug\net7.0\bhargavitest.DTO.deps.json
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DTO\bin\Debug\net7.0\bhargavitest.DTO.dll
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DTO\bin\Debug\net7.0\bhargavitest.DTO.pdb
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DTO\obj\Debug\net7.0\bhargavitest.DTO.csproj.AssemblyReference.cache
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DTO\obj\Debug\net7.0\bhargavitest.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DTO\obj\Debug\net7.0\bhargavitest.DTO.AssemblyInfoInputs.cache
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DTO\obj\Debug\net7.0\bhargavitest.DTO.AssemblyInfo.cs
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DTO\obj\Debug\net7.0\bhargavitest.DTO.csproj.CoreCompileInputs.cache
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DTO\obj\Debug\net7.0\bhargavitest.DTO.dll
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DTO\obj\Debug\net7.0\refint\bhargavitest.DTO.dll
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DTO\obj\Debug\net7.0\bhargavitest.DTO.pdb
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DTO\obj\Debug\net7.0\ref\bhargavitest.DTO.dll

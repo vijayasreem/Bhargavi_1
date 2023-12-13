@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\bhargavitest.DTO\bhargavitest.DTO.csproj" />
+    <ProjectReference Include="..\bhargavitest.DataAccess\bhargavitest.DataAccess.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

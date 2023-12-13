@@ -1,0 +1,261 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.API\\bhargavitest.API.csproj": {}
+  },
+  "projects": {
+    "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.API\\bhargavitest.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.API\\bhargavitest.API.csproj",
+        "projectName": "bhargavitest.API",
+        "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.API\\bhargavitest.API.csproj",
+        "packagesPath": "C:\\Users\\mmadipally\\.nuget\\packages\\",
+        "outputPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mmadipally\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DTO\\bhargavitest.DTO.csproj": {
+                "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DTO\\bhargavitest.DTO.csproj"
+              },
+              "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.Service\\bhargavitest.Service.csproj": {
+                "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.Service\\bhargavitest.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNet.WebApi.Core": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DataAccess\\bhargavitest.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DataAccess\\bhargavitest.DataAccess.csproj",
+        "projectName": "bhargavitest.DataAccess",
+        "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DataAccess\\bhargavitest.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\mmadipally\\.nuget\\packages\\",
+        "outputPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mmadipally\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DTO\\bhargavitest.DTO.csproj": {
+                "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DTO\\bhargavitest.DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DTO\\bhargavitest.DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DTO\\bhargavitest.DTO.csproj",
+        "projectName": "bhargavitest.DTO",
+        "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DTO\\bhargavitest.DTO.csproj",
+        "packagesPath": "C:\\Users\\mmadipally\\.nuget\\packages\\",
+        "outputPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mmadipally\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.Service\\bhargavitest.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.Service\\bhargavitest.Service.csproj",
+        "projectName": "bhargavitest.Service",
+        "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.Service\\bhargavitest.Service.csproj",
+        "packagesPath": "C:\\Users\\mmadipally\\.nuget\\packages\\",
+        "outputPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\mmadipally\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DataAccess\\bhargavitest.DataAccess.csproj": {
+                "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DataAccess\\bhargavitest.DataAccess.csproj"
+              },
+              "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DTO\\bhargavitest.DTO.csproj": {
+                "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DTO\\bhargavitest.DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

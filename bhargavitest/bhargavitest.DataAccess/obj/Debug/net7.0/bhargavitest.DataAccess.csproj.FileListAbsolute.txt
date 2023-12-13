@@ -1,0 +1,15 @@
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\bin\Debug\net7.0\bhargavitest.DataAccess.deps.json
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\bin\Debug\net7.0\bhargavitest.DataAccess.dll
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\bin\Debug\net7.0\bhargavitest.DataAccess.pdb
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\bin\Debug\net7.0\bhargavitest.DTO.dll
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\bin\Debug\net7.0\bhargavitest.DTO.pdb
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\obj\Debug\net7.0\bhargavitest.DataAccess.csproj.AssemblyReference.cache
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\obj\Debug\net7.0\bhargavitest.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\obj\Debug\net7.0\bhargavitest.DataAccess.AssemblyInfoInputs.cache
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\obj\Debug\net7.0\bhargavitest.DataAccess.AssemblyInfo.cs
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\obj\Debug\net7.0\bhargavitest.DataAccess.csproj.CoreCompileInputs.cache
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\obj\Debug\net7.0\bhargavitest.DataAccess.csproj.CopyComplete
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\obj\Debug\net7.0\bhargavitest.DataAccess.dll
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\obj\Debug\net7.0\refint\bhargavitest.DataAccess.dll
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\obj\Debug\net7.0\bhargavitest.DataAccess.pdb
+C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.DataAccess\obj\Debug\net7.0\ref\bhargavitest.DataAccess.dll
