@@ -64,3 +64,6 @@ C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargav
 C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.API\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.API\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.API\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Amar\Application\20231012_Debug\Apps\1\1858\202312135205\bhargavitest\bhargavitest.API\obj\Debug\net7.0\bhargavitest.API.dll
+C:\Amar\Application\20231012_Debug\Apps\1\1858\202312135205\bhargavitest\bhargavitest.API\obj\Debug\net7.0\refint\bhargavitest.API.dll
+C:\Amar\Application\20231012_Debug\Apps\1\1858\202312135205\bhargavitest\bhargavitest.API\obj\Debug\net7.0\bhargavitest.API.pdb

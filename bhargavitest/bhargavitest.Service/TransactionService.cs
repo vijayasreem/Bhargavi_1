@@ -1,59 +1,64 @@
-﻿
-using System;
+﻿using System;
+using System.Threading.Tasks;
 
 public interface ITransactionService
 {
-    Task ProcessTransaction(decimal creditAmount);
+    Task ProcessTransaction(double creditAmount);
 }
 
 public class TransactionService : ITransactionService
 {
-    private decimal dailyCreditSpent;
-    private int transactionCount;
+    private double dailyCreditLimit = 50000;
+    private int maxTransactionCount = 3;
+    private double dailyCreditSpent = 0;
+    private int transactionCount = 0;
 
-    public async Task ProcessTransaction(decimal creditAmount)
+    public async Task ProcessTransaction(double creditAmount)
     {
         try
         {
             await CheckCreditLimit(creditAmount);
             await CheckTransactionCount();
 
-            // Perform the transaction processing here
+            // Process the transaction here
+            Console.WriteLine("Transaction processed successfully");
 
-            UpdateDailyCreditSpent(creditAmount);
-            UpdateTransactionCount();
-
-            Console.WriteLine("Transaction completed successfully.");
+            // Update daily credit spent and transaction count
+            dailyCreditSpent += creditAmount;
+            transactionCount++;
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error: " + ex.Message);
+            Console.WriteLine(ex.Message);
         }
     }
 
-    private async Task CheckCreditLimit(decimal creditAmount)
+    private async Task CheckCreditLimit(double creditAmount)
     {
-        if (dailyCreditSpent + creditAmount > 50000)
+        if (dailyCreditSpent + creditAmount > dailyCreditLimit)
         {
-            throw new Exception("Your daily credit limit is exceeded.");
+            throw new Exception("Your daily credit limit is exceeded");
         }
     }
 
     private async Task CheckTransactionCount()
     {
-        if (transactionCount >= 3)
+        if (transactionCount >= maxTransactionCount)
         {
-            throw new Exception("Transaction limit exceeded. You cannot perform more than 3 transactions in a day.");
+            throw new Exception("Transaction limit exceeded. You cannot perform more than 3 transactions in a day");
         }
     }
+}
 
-    private void UpdateDailyCreditSpent(decimal creditAmount)
+public class Program
+{
+    public static async Task Main(string[] args)
     {
-        dailyCreditSpent += creditAmount;
-    }
-
-    private void UpdateTransactionCount()
-    {
-        transactionCount++;
+        // Test the TransactionService
+        var service = new TransactionService();
+        await service.ProcessTransaction(20000);
+        await service.ProcessTransaction(30000);
+        await service.ProcessTransaction(10000);
+        await service.ProcessTransaction(5000);
     }
 }

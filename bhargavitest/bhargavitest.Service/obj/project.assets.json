@@ -1825,11 +1825,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.Service\\bhargavitest.Service.csproj",
+      "projectUniqueName": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1858\\202312135205\\bhargavitest\\bhargavitest.Service\\bhargavitest.Service.csproj",
       "projectName": "bhargavitest.Service",
-      "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.Service\\bhargavitest.Service.csproj",
+      "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1858\\202312135205\\bhargavitest\\bhargavitest.Service\\bhargavitest.Service.csproj",
       "packagesPath": "C:\\Users\\mmadipally\\.nuget\\packages\\",
-      "outputPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.Service\\obj\\",
+      "outputPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1858\\202312135205\\bhargavitest\\bhargavitest.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mmadipally\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1844,11 +1844,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DataAccess\\bhargavitest.DataAccess.csproj": {
-              "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DataAccess\\bhargavitest.DataAccess.csproj"
+            "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1858\\202312135205\\bhargavitest\\bhargavitest.DataAccess\\bhargavitest.DataAccess.csproj": {
+              "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1858\\202312135205\\bhargavitest\\bhargavitest.DataAccess\\bhargavitest.DataAccess.csproj"
             },
-            "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DTO\\bhargavitest.DTO.csproj": {
-              "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1868\\202312134306\\bhargavitest\\bhargavitest.DTO\\bhargavitest.DTO.csproj"
+            "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1858\\202312135205\\bhargavitest\\bhargavitest.DTO\\bhargavitest.DTO.csproj": {
+              "projectPath": "C:\\Amar\\Application\\20231012_Debug\\Apps\\1\\1858\\202312135205\\bhargavitest\\bhargavitest.DTO\\bhargavitest.DTO.csproj"
             }
           }
         }

@@ -1,4 +1,9 @@
-﻿public interface ITransactionService
+﻿
+
+
+using System.Threading.Tasks;
+
+public interface ITransactionService
 {
-    Task ProcessTransaction(decimal creditAmount);
+    Task ProcessTransaction(double creditAmount);
 }

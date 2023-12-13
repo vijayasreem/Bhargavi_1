@@ -1,12 +1,11 @@
-﻿using bhargavitest.DTO;
-using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace bhargavitest
 {
-    public class CreditTransactionRepository : ICreditTransactionRepository
+    public class CreditTransactionRepository : ICreditTransactionService
     {
         private readonly string connectionString;
 
@@ -15,102 +14,222 @@ namespace bhargavitest
             this.connectionString = connectionString;
         }
 
-        public async Task<IEnumerable<CreditTransactionModel>> GetAllAsync()
+        public async Task<bool> CreateTransaction(CreditTransactionModel transaction)
         {
-            using (var connection = new MySqlConnection(connectionString))
+            try
             {
-                await connection.OpenAsync();
-
-                var command = new MySqlCommand("SELECT * FROM CreditTransactions", connection);
-                var reader = await command.ExecuteReaderAsync();
-
-                var transactions = new List<CreditTransactionModel>();
-
-                while (await reader.ReadAsync())
+                using (var connection = new MySqlConnection(connectionString))
                 {
-                    var transaction = new CreditTransactionModel
+                    await connection.OpenAsync();
+
+                    // Check daily credit limit
+                    decimal dailyCreditLimit = 50000;
+                    decimal totalDailyCredit = await GetTotalDailyCredit(connection);
+                    if (transaction.CreditAmount > dailyCreditLimit - totalDailyCredit)
                     {
-                        Id = reader.GetInt32("Id"),
-                        Amount = reader.GetDecimal("Amount"),
-                        ErrorMessage = reader.GetString("ErrorMessage"),
-                        IsSuccessful = reader.GetBoolean("IsSuccessful")
-                    };
+                        throw new Exception("Your daily credit limit is exceeded");
+                    }
 
-                    transactions.Add(transaction);
+                    // Check transaction count
+                    int maxTransactionCount = 3;
+                    int currentTransactionCount = await GetTransactionCountForToday(connection);
+                    if (currentTransactionCount >= maxTransactionCount)
+                    {
+                        throw new Exception("Transaction limit exceeded. You cannot perform more than 3 transactions in a day");
+                    }
+
+                    // Create transaction
+                    string query = "INSERT INTO CreditTransactions (CreditAmount) VALUES (@CreditAmount)";
+                    using (var command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CreditAmount", transaction.CreditAmount);
+                        await command.ExecuteNonQueryAsync();
+                    }
+
+                    // Update daily credit and transaction count
+                    await UpdateDailyCreditAndTransactionCount(connection, transaction.CreditAmount);
+
+                    return true;
                 }
-
-                return transactions;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
             }
         }
 
-        public async Task<CreditTransactionModel> GetByIdAsync(int id)
+        public async Task<CreditTransactionModel> GetTransaction(int id)
         {
-            using (var connection = new MySqlConnection(connectionString))
+            try
             {
-                await connection.OpenAsync();
-
-                var command = new MySqlCommand("SELECT * FROM CreditTransactions WHERE Id = @Id", connection);
-                command.Parameters.AddWithValue("@Id", id);
-
-                var reader = await command.ExecuteReaderAsync();
-
-                if (await reader.ReadAsync())
+                using (var connection = new MySqlConnection(connectionString))
                 {
-                    var transaction = new CreditTransactionModel
+                    await connection.OpenAsync();
+
+                    string query = "SELECT * FROM CreditTransactions WHERE Id = @Id";
+                    using (var command = new MySqlCommand(query, connection))
                     {
-                        Id = reader.GetInt32("Id"),
-                        Amount = reader.GetDecimal("Amount"),
-                        ErrorMessage = reader.GetString("ErrorMessage"),
-                        IsSuccessful = reader.GetBoolean("IsSuccessful")
-                    };
+                        command.Parameters.AddWithValue("@Id", id);
 
-                    return transaction;
+                        using (var reader = await command.ExecuteReaderAsync())
+                        {
+                            if (await reader.ReadAsync())
+                            {
+                                return new CreditTransactionModel
+                                {
+                                    Id = Convert.ToInt32(reader["Id"]),
+                                    CreditAmount = Convert.ToDecimal(reader["CreditAmount"])
+                                };
+                            }
+                        }
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
-                return null;
+            return null;
+        }
+
+        public async Task<List<CreditTransactionModel>> GetAllTransactions()
+        {
+            var transactions = new List<CreditTransactionModel>();
+
+            try
+            {
+                using (var connection = new MySqlConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    string query = "SELECT * FROM CreditTransactions";
+                    using (var command = new MySqlCommand(query, connection))
+                    {
+                        using (var reader = await command.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                transactions.Add(new CreditTransactionModel
+                                {
+                                    Id = Convert.ToInt32(reader["Id"]),
+                                    CreditAmount = Convert.ToDecimal(reader["CreditAmount"])
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return transactions;
+        }
+
+        public async Task<bool> UpdateTransaction(CreditTransactionModel transaction)
+        {
+            try
+            {
+                using (var connection = new MySqlConnection(connectionString))
+                {
+                    await connection.OpenAsync();
+
+                    string query = "UPDATE CreditTransactions SET CreditAmount = @CreditAmount WHERE Id = @Id";
+                    using (var command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CreditAmount", transaction.CreditAmount);
+                        command.Parameters.AddWithValue("@Id", transaction.Id);
+
+                        int rowsAffected = await command.ExecuteNonQueryAsync();
+                        if (rowsAffected == 0)
+                        {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
             }
         }
 
-        public async Task AddAsync(CreditTransactionModel transaction)
+        public async Task<bool> DeleteTransaction(int id)
         {
-            using (var connection = new MySqlConnection(connectionString))
+            try
             {
-                await connection.OpenAsync();
+                using (var connection = new MySqlConnection(connectionString))
+                {
+                    await connection.OpenAsync();
 
-                var command = new MySqlCommand("INSERT INTO CreditTransactions (Amount, ErrorMessage, IsSuccessful) VALUES (@Amount, @ErrorMessage, @IsSuccessful)", connection);
-                command.Parameters.AddWithValue("@Amount", transaction.Amount);
-                command.Parameters.AddWithValue("@ErrorMessage", transaction.ErrorMessage);
-                command.Parameters.AddWithValue("@IsSuccessful", transaction.IsSuccessful);
+                    string query = "DELETE FROM CreditTransactions WHERE Id = @Id";
+                    using (var command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", id);
 
-                await command.ExecuteNonQueryAsync();
+                        int rowsAffected = await command.ExecuteNonQueryAsync();
+                        if (rowsAffected == 0)
+                        {
+                            return false;
+                        }
+                    }
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
             }
         }
 
-        public async Task UpdateAsync(CreditTransactionModel transaction)
+        private async Task<decimal> GetTotalDailyCredit(MySqlConnection connection)
         {
-            using (var connection = new MySqlConnection(connectionString))
+            decimal totalDailyCredit = 0;
+
+            string query = "SELECT SUM(CreditAmount) FROM CreditTransactions WHERE DATE(DateCreated) = CURDATE()";
+            using (var command = new MySqlCommand(query, connection))
             {
-                await connection.OpenAsync();
-
-                var command = new MySqlCommand("UPDATE CreditTransactions SET Amount = @Amount, ErrorMessage = @ErrorMessage, IsSuccessful = @IsSuccessful WHERE Id = @Id", connection);
-                command.Parameters.AddWithValue("@Amount", transaction.Amount);
-                command.Parameters.AddWithValue("@ErrorMessage", transaction.ErrorMessage);
-                command.Parameters.AddWithValue("@IsSuccessful", transaction.IsSuccessful);
-                command.Parameters.AddWithValue("@Id", transaction.Id);
-
-                await command.ExecuteNonQueryAsync();
+                object result = await command.ExecuteScalarAsync();
+                if (result != null && result != DBNull.Value)
+                {
+                    totalDailyCredit = Convert.ToDecimal(result);
+                }
             }
+
+            return totalDailyCredit;
         }
 
-        public async Task DeleteAsync(int id)
+        private async Task<int> GetTransactionCountForToday(MySqlConnection connection)
         {
-            using (var connection = new MySqlConnection(connectionString))
+            int transactionCount = 0;
+
+            string query = "SELECT COUNT(*) FROM CreditTransactions WHERE DATE(DateCreated) = CURDATE()";
+            using (var command = new MySqlCommand(query, connection))
             {
-                await connection.OpenAsync();
+                object result = await command.ExecuteScalarAsync();
+                if (result != null && result != DBNull.Value)
+                {
+                    transactionCount = Convert.ToInt32(result);
+                }
+            }
 
-                var command = new MySqlCommand("DELETE FROM CreditTransactions WHERE Id = @Id", connection);
-                command.Parameters.AddWithValue("@Id", id);
+            return transactionCount;
+        }
 
+        private async Task UpdateDailyCreditAndTransactionCount(MySqlConnection connection, decimal creditAmount)
+        {
+            string query = "UPDATE DailyStats SET TotalCredit = TotalCredit + @CreditAmount, TransactionCount = TransactionCount + 1 WHERE Date = CURDATE()";
+            using (var command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@CreditAmount", creditAmount);
                 await command.ExecuteNonQueryAsync();
             }
         }

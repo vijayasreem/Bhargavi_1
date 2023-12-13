@@ -15,3 +15,6 @@ C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargav
 C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.Service\obj\Debug\net7.0\refint\bhargavitest.Service.dll
 C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.Service\obj\Debug\net7.0\bhargavitest.Service.pdb
 C:\Amar\Application\20231012_Debug\Apps\1\1868\202312134306\bhargavitest\bhargavitest.Service\obj\Debug\net7.0\ref\bhargavitest.Service.dll
+C:\Amar\Application\20231012_Debug\Apps\1\1858\202312135205\bhargavitest\bhargavitest.Service\obj\Debug\net7.0\bhargavitest.Service.dll
+C:\Amar\Application\20231012_Debug\Apps\1\1858\202312135205\bhargavitest\bhargavitest.Service\obj\Debug\net7.0\refint\bhargavitest.Service.dll
+C:\Amar\Application\20231012_Debug\Apps\1\1858\202312135205\bhargavitest\bhargavitest.Service\obj\Debug\net7.0\bhargavitest.Service.pdb
